@@ -31,6 +31,7 @@ bootstrap destination username:
             users.users.{{username}}.password = \"password\";\n \
             users.users.{{username}}.home = \"/home/{{username}}\";\n \
             users.users.{{username}}.isNormalUser = true;\n \
+            users.users.{{username}}.openssh.authorizedKeys.keys = [ \"{{publickey}}\" ];\n \
         ' /mnt/etc/nixos/configuration.nix; \
         nixos-install --no-root-passwd; \
         reboot;"
