@@ -1,4 +1,4 @@
-bootstrap destination username publickey:
+bootstrap destination username:
     ssh \
     -o PubkeyAuthentication=no \
     -o UserKnownHostsFile=/dev/null \
@@ -31,7 +31,6 @@ bootstrap destination username publickey:
             users.users.{{username}}.password = \"password\";\n \
             users.users.{{username}}.home = \"/home/{{username}}\";\n \
             users.users.{{username}}.isNormalUser = true;\n \
-            users.users.{{username}}.openssh.authorizedKeys.keys = [ \"{{publickey}}\" ];\n \
         ' /mnt/etc/nixos/configuration.nix; \
         nixos-install --no-root-passwd; \
         reboot;"
