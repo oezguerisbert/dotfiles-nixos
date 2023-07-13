@@ -1,4 +1,4 @@
-bootstrap destination username:
+bootstrap destination username publickey:
     ssh \
     -o PubkeyAuthentication=no \
     -o UserKnownHostsFile=/dev/null \
