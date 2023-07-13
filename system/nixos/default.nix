@@ -1,9 +1,9 @@
 { inputs }:
 
-{ desktop, hypervisor ? "linux", system, username }:
+{ desktop, system, username }:
 
 let
-  hardware-configuration = import ./hardware/${hypervisor}/${system}.nix;
+  hardware-configuration = import ./hardware/linux/${system}.nix;
   configuration = import ./configuration.nix { inherit desktop username; };
 in
 inputs.nixpkgs.lib.nixosSystem {
