@@ -119,9 +119,11 @@ in
         "${i3_mod}+Return" = "exec ${pkgs.kitty}/bin/kitty";
         "${i3_mod}+Shift+q" = "kill";
 
-        "${i3_mod}+d" =
+        "${i3_mod}+c" =
           "exec --no-startup-id ${pkgs.rofi}/bin/rofi -modi drun -show drun";
-
+        "${i3_mod}+d" =
+          "exec --no-startup-id ${pkgs.rofi}/bin/rofi -modi drun -show window";
+          
         "${i3_mod}+h" = "focus left";
         "${i3_mod}+j" = "focus down";
         "${i3_mod}+k" = "focus up";
