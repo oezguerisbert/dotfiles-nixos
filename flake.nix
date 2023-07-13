@@ -1,5 +1,5 @@
 {
-  description = "Development packages and systems for TheAltF4Stream";
+  description = "Development packages and systems for oezguerisbert. Inspired by 'blackglasses' at TheAltF4Stream";
 
   inputs = {
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -17,8 +17,8 @@
       systems = [ "aarch64-darwin" "aarch64-linux" "x86_64-darwin" "x86_64-linux" ];
       perSystem = { config, self', inputs', pkgs, system, ... }: {
         packages = {
-          thealtf4stream-nvim = pkgs.vimUtils.buildVimPlugin {
-            name = "TheAltF4Stream";
+          oezguerisbert-nvim = pkgs.vimUtils.buildVimPlugin {
+            name = "oezguerisbert";
             src = ./config/nvim;
           };
         };
@@ -26,22 +26,23 @@
 
       flake = {
         darwinConfigurations = {
-          thealtf4stream-darwin = systems.mkDarwin {
+          oezguerisbert-darwin = systems.mkDarwin {
             system = "x86_64-darwin";
-            username = "erikreinert";
+            username = "oezguerisbert";
           };
 
           work-darwin = systems.mkDarwin {
             system = "aarch64-darwin";
-            username = "ereinert";
+            username = "oisbert";
           };
         };
 
+
         nixosConfigurations = {
-          thealtf4stream-nixos = systems.mkNixOS {
+          oezguerisbert-nixos = systems.mkNixOS {
             desktop = true;
             system = "x86_64-linux";
-            username = "erikreinert";
+            username = "oezguerisbert";
           };
         };
       };
